@@ -1,0 +1,96 @@
+﻿<Window x:Class="DigFiltersModel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DigFiltersModel"
+        mc:Ignorable="d"
+        Title="Digital Filters Modelling Application" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="10"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="*" MinWidth="10"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch"></GridSplitter>
+            <Grid Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <ComboBox Grid.Row="0" Grid.Column="0" x:Name="cbDefaultFilters" Margin="3,10" Padding="3"></ComboBox>
+                <Button Grid.Column="1" Grid.Row="0" x:Name="btnLoadDefaultFilter" Content="Load this filter" Margin="3,10" Padding="3"></Button>
+                <Button Grid.Column="0" Grid.Row="1" x:Name="btnLoadFilterFromFile" Content="Load filter from file" Margin="3,10" Padding="3" Click="btnLoadFilterFromFile_Click"></Button>
+                <StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto">
+                    <RadioButton x:Name="rbFilterAmplitudeData" GroupName="FilterData" Content="Amplitude" IsChecked="True" Margin="3,3"></RadioButton>
+                    <RadioButton x:Name="rbFilterPhaseData" GroupName="FilterData" Content="Phase" IsChecked="False" Margin="3,3"></RadioButton>
+                </StackPanel>
+                <Button Grid.Column="1" Grid.Row="2" x:Name="btnSaveFilterDataToFile" Content="Save filter data to file" Margin="3,10" Padding="3" ></Button>
+                <Label Grid.Column="0" Grid.Row="3" Content="Filter name"></Label>
+                <Label Grid.Column="1" Grid.Row="3" x:Name="lbFilterName"></Label>
+                <Label Grid.Column="0" Grid.Row="4" Content="Filter order"></Label>
+                <Label Grid.Column="1" Grid.Row="4" x:Name="lbFilterOrder"></Label>
+                <Label Grid.Column="0" Grid.Row="5" Content="Feedback"></Label>
+                <Label Grid.Column="1" Grid.Row="5" x:Name="lbFilterFeedback" Content="false"></Label>
+                <Label Grid.Column="0" Grid.Row="6" Content="Stability"></Label>
+                <Label Grid.Column="1" Grid.Row="6" x:Name="lbFilterStability" Content="true"></Label>
+            </Grid>
+            <Label Grid.Column="0" Content="Signal Graph" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Top" ></Label>
+            <Border Grid.Column="0" Grid.Row="0" Width="auto" >
+                <Canvas Background="Aquamarine" x:Name="cvSignalGraph" MouseDown="cvSignalGraph_MouseDown" SizeChanged="cvSignalGraph_SizeChanged"></Canvas>
+            </Border>
+            <Label Grid.Column="2" Content="Signal FT" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Top" ></Label>
+            <Border Grid.Column="2" Grid.Row="0" Width="auto" >
+                <Canvas Background="BlanchedAlmond" x:Name="cvSignalFreqGraph"></Canvas>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ComboBox Grid.Row="0" Grid.Column="0" x:Name="cbDefaultSignals" Margin="10,3" Padding="3"/>
+            <Button Grid.Row="1" Grid.Column="0" x:Name="btnLoadDefaultSignal" Content="Load this Signal" Margin="10,3" Padding="3"/>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="btnLoadSignal" Content="Load Signal from file" Margin="10,3" Padding="3" Click="btnLoadSignal_Click"/>
+            <Button Grid.Row="1" Grid.Column="1" x:Name="btnSaveSignal" Content="Save Signal to file" Margin="10,3" Padding="3" Click="btnSaveSignal_Click"/>
+            <StackPanel Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" Orientation="Vertical">
+                <RadioButton x:Name="rbSignalAmplitudeData" GroupName="SignalData" Content="Amplitude" IsChecked="True" Margin="3,3"></RadioButton>
+                <RadioButton x:Name="rbSignalPhaseData" GroupName="SignalData" Content="Phase" IsChecked="False" Margin="3,3"></RadioButton>
+            </StackPanel>
+            <Button Grid.Column="2" Grid.Row="1" x:Name="btnSaveSignalDataToFile" Content="Save filter data to file" Margin="3,10" Padding="3" ></Button>
+            <Label Grid.Row="0" Grid.Column="3" Content="Signal name"></Label>
+            <Label Grid.Row="1" Grid.Column="3" x:Name="lbSignalName"></Label>
+            <Label Grid.Row="0" Grid.Column="4" Content="Signal length"></Label>
+            <Label Grid.Row="1" Grid.Column="4" x:Name="lbSignalLength"></Label>
+            <Label Grid.Row="0" Grid.Column="5" Content="Set signal length to use"></Label>
+            <TextBox Grid.Row="1" Grid.Column="5" x:Name="tbLength" TextChanged="tbLength_TextChanged"/>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\bin\Debug\DigFiltersModel.exe.config
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\bin\Debug\DigFiltersModel.exe
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\bin\Debug\DigFiltersModel.pdb
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\MainWindow.g.cs
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\App.g.cs
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\DigFiltersModel_MarkupCompile.cache
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\DigFiltersModel_MarkupCompile.lref
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\MainWindow.baml
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\DigFiltersModel.g.resources
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\DigFiltersModel.Properties.Resources.resources
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\DigFiltersModel.csproj.GenerateResource.cache
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\DigFiltersModel.exe
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\obj\Debug\DigFiltersModel.pdb
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\bin\Debug\DigFiltersModel.exe.CodeAnalysisLog.xml
+C:\labs\DWork\DigFiltersModel\DigFiltersModel\bin\Debug\DigFiltersModel.exe.lastcodeanalysissucceeded
